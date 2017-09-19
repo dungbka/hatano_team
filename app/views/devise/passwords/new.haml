@@ -1,0 +1,17 @@
+%head
+  %title Forgot password
+%body
+  .main{:align => "center"}
+    %p.su Forgot your password?
+    %h4 Please send our team your email registered
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      = f.email_field :email, autofocus: true, class: "mail", placeholder: "Email Address"
+      = f.submit "SEND EMAIL", class: "submit"
+    %br/
+    = render "devise/shared/links"
+  .bottom
+    %p.mb{:align => "center"}
+      %strong -
+      Designed By
+      %a{:href => "https://www.khaledmneimneh.me", :target => "_blank"}
+        %span.mb-2 Khaled Mneimneh
